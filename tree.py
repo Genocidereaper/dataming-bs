@@ -9,14 +9,20 @@ if ageInput>=6:
 else:
 	age="-1"
 
-# Marital Status
-# Options:   divorced, married, never married, Separated, Widowed
-MS = input("Enter marital status: ")
-if (MS!="divorced")and(MS!="married"):
-	MS="other"
+# website fowarding
+websitefowarding = int(input("Enter website fowarding "))
+if websitefowarding>=2 and websitefowarding <4:
+    websitefowarding= "suspicious"
+elif websitefowarding <= 1:
+    websitefowarding = "legitimate"
+else: websitefowarding = "phishing"
 
-
-ed=input("Enter education level: ")
+#pop up window
+popwindow= input("Enter info about pop up window")
+if popupwindow != " ":
+    popupwindow ="phishing"
+else:
+    popupwindow="legitimate"
 
 # server form handling
 hoursInput=input("server form handling")
@@ -103,4 +109,3 @@ else: # right branch
 #print(income)
 
 print("\nExpected website is  "+fishing) 
-
