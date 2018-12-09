@@ -18,17 +18,18 @@ if (MS!="divorced")and(MS!="married"):
 
 ed=input("Enter education level: ")
 
-# Hours worked per week
-# 0-40: standard    41+:  extra
-hoursInput=int(input("enter number of hours worked per week: "))
-if hoursInput>40:
-	hours="extra"
+# server form handling
+hoursInput=input("server form handling")
+if hoursInput == "about blank" or hoursinput==" ":
+	hours="Phishing"
+elif hoursInput=="different domain":
+	hours="Suspicious"
 else:
-	hours="standard"
+    hours = "legitimate"
 	
-# Occupation:  transport, tech, unknown, clerical, craft, armed forces
+# length of url
 OccInput=input("enter url length: ")
-if (OccInput >= 54 and <= 75):
+if (OccInput >= 54 and OccInput <= 75):
 	occ="-1"
 elif (OccInput<54):
 	occ="1"
