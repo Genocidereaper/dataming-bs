@@ -34,13 +34,13 @@ else:
     hours = "legitimate"
 	
 # length of url
-OccInput=input("enter url length: ")
+lengthofurl=input("enter url length: ")
 if (OccInput >= 54 and OccInput <= 75):
-	occ="-1"
+	urlstatus="suspicious"
 elif (OccInput<54):
-	occ="1"
+	urlstatus="legitimate"
 else:
-	occ="0"
+	urlstatus="phishing"
 	
 # Gender: M F
 gender = input("enter gender: ")
