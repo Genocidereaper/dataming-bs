@@ -49,8 +49,8 @@ else: ipresult = "legitimate"
 # Initialize as unknown in case the tree doesnt cover output
 fishing = "unknown"
 	
-if (MS!="other"): # left branch
-	if (ed!="HS" or ed!="no HS"):
+if (websitefowarding>=2 and websitefowarding <4): # first branch
+	if (popupwindow != " "):
 		if MS=="married":
 			if hours=="extra":  # applies to all branches
 				fishing="greater"
@@ -73,7 +73,7 @@ if (MS!="other"): # left branch
 					fishing="less"
 	else:
 		fishing="less"
-else: # right branch	
+else: # second branch	
 	if (ed=="HS" or ed=="no HS"):
 		fishing="less" #left branch)
 	else:
