@@ -72,37 +72,35 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 	else:
 		fishing="legitimate"
 else: # second branch	
-	if (ed=="HS" or ed=="no HS"):
-		fishing="less" #left branch)
+	if (OccInput >= 54 and OccInput <= 75)::
+		fishing="suspicious" #left branch)
 	else:
-		if age=="0":
-			fishing="less" # left branch
+		if age=="-1":
+			fishing="phishing" # left branch
 		else:
-			if hours=="standard":# right branch here
-				if (ed=="Prof" or ed=="Doctorate"):
-					if (gender=="male"):
-						fishing="greater"
+			if hoursInput=="different domain": #right branch here
+				if (websitefowarding>=2 and websitefowarding <4):
+					if ipAdress == "yes"::
+						fishing="phishing"
 					else:
-						fishing="less"
+						fishing="legitimate"
 				else:
-					fishing="less"
+					fishing="suspicious"
 			else:
-				if (ed=="Masters" or ed=="Prof" or ed=="Doctorate"):	##finish
-					if (occ=="1"):
-						fishing=="greater"
+				if (hoursInput == "about blank" or hoursinput==" "):	##finish
+					if (OccInput >= 54 and OccInput <= 75):
+						fishing="suspicious"
+					elif (OccInput<54):
+						fishing="legitimate"
 					else:
-						fishing=="less"
+						fishing="phishing"
 				else:
-					fishing="less"
+					fishing="pshishing"
 					
 				
 	
 	
 	
-#print(str(age))
-#print(MS)
-#print(ed)
-#print(hours)
-#print(fishing)
+
 
 print("\nExpected website is  "+fishing) 
