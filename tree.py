@@ -9,10 +9,10 @@ else:
 # website fowarding
 websitefowarding = int(input("Enter website fowarding "))
 if websitefowarding>=2 and websitefowarding <4:
-	websitefowarding= "suspicious"
+	websitefowardingstatus= "suspicious"
 elif websitefowarding <= 1:
-	websitefowarding = "legitimate"
-else: websitefowarding = "phishing"
+	websitefowardingstatus = "legitimate"
+else: websitefowardingstatus = "phishing"
 
 #pop up window
 popupwindow= input("Enter info about pop up window")
@@ -23,7 +23,7 @@ else:
 
 # server form handling
 hoursInput=input("server form handling")
-if hoursInput == "about blank" or hoursinput==" ":
+if hoursInput == "about blank" or hoursInput==" ":
 	hours="Phishing"
 elif hoursInput=="different domain":
 	hours="Suspicious"
@@ -31,10 +31,10 @@ else:
     hours = "legitimate"
 	
 # length of url
-lengthofurl=input("enter url length: ")
-if (OccInput >= 54 and OccInput <= 75):
+lengthofurl=int(input("enter url length: "))
+if (lengthofurl >= 54 and lengthofurl <= 75):
 	urlstatus="suspicious"
-elif (OccInput<54):
+elif (lengthofurl<54):
 	urlstatus="legitimate"
 else:
 	urlstatus="phishing"
@@ -51,7 +51,7 @@ fishing = "unknown"
 	
 if (websitefowarding>=2 and websitefowarding <4): # first branch
 	if (popupwindow != " "):
-			if hoursInput == "about blank" or hoursinput==" ":  # applies to all branches
+			if hoursInput == "about blank" or hoursInput==" ":  # applies to all branches
 				fishing="phishing"
 			else:
 				if age == "1":
@@ -87,7 +87,7 @@ else: # second branch
 				else:
 					fishing="suspicious"
 			else:
-				if (hoursInput == "about blank" or hoursinput==" "):	##finish
+				if (hoursInput == "about blank" or hoursInput==" "):	##finish
 					if (OccInput >= 54 and OccInput <= 75):
 						fishing="suspicious"
 					elif (OccInput<54):
