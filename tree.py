@@ -61,18 +61,18 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 						fishing="suspious"
 				else:
 					fishing="phishing"
-		if websitefowarding <= 1::
-			if  hoursInput=="different domain": #right tree
-					if (OccInput >= 54 and OccInput <= 75)::	
+elif websitefowarding <= 1:
+	if  hoursInput=="different domain": #right tree
+			if (OccInput >= 54 and OccInput <= 75):	
 						fishing="suspicious"
-					else:
-						fishing="legitimate"
-				else:
-					fishing="phishing"
+			else:
+			    fishing="legitimate"
+				
+					
 	else:
-		fishing="legitimate"
+		fishing="phishing"
 else: # second branch	
-	if (OccInput >= 54 and OccInput <= 75)::
+	if (OccInput >= 54 and OccInput <= 75):
 		fishing="suspicious" #left branch)
 	else:
 		if age=="-1":
@@ -80,7 +80,7 @@ else: # second branch
 		else:
 			if hoursInput=="different domain": #right branch here
 				if (websitefowarding>=2 and websitefowarding <4):
-					if ipAdress == "yes"::
+					if ipAdress == "yes":
 						fishing="phishing"
 					else:
 						fishing="legitimate"
