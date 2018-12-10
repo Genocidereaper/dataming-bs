@@ -51,9 +51,8 @@ fishing = "unknown"
 	
 if (websitefowarding>=2 and websitefowarding <4): # first branch
 	if (popupwindow != " "):
-		if MS=="married":
-			if hours=="extra":  # applies to all branches
-				fishing="greater"
+			if hoursInput == "about blank" or hoursinput==" ":  # applies to all branches
+				fishing="phishing"
 			else:
 				if age == "-1":
 					if occ == "2":
