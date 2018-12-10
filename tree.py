@@ -69,7 +69,7 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 					else:
 						fishing="less"
 				else:
-					fishing="less"
+					fishing="phishing"
 	else:
 		fishing="less"
 else: # second branch	
