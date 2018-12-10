@@ -54,13 +54,13 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 			if hoursInput == "about blank" or hoursinput==" ":  # applies to all branches
 				fishing="phishing"
 			else:
-				if age == "-1":
-					if occ == "2":
-						fishing="less"
+				if age == "1":
+					if urlstatus == "legitimate":
+						fishing="legitimate"
 					else:
-						fishing="greater"
+						fishing="suspious"
 				else:
-					fishing="less"
+					fishing="phishing"
 		if MS=="divorced":
 			if hours=="extra": #right tree
 				if (ed=="Masters" or ed=="Prof" or ed=="Doctorate"):
