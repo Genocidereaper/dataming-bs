@@ -45,13 +45,13 @@ if ipAdress == "yes":
     ipresult = "phishing"
 else: ipresult = "legitimate"
 
-# our classification output = fishing level	
-# Initialize as unknown in case the tree doesnt cover output
+# classification output = fishing level
 fishing = "unknown"
-	
-if (websitefowarding>=2 and websitefowarding <4): # first branch
+
+# First branch
+if (websitefowarding>=2 and websitefowarding <4):
 	if (popupwindow != " "):
-			if serverInput == "about blank" or serverInput==" ":  # applies to all branches
+			if serverInput == "about blank" or serverInput==" ":
 				fishing="phishing"
 			else:
 				if age == "1":
@@ -61,8 +61,9 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 						fishing="suspious"
 				else:
 					fishing="phishing"
+# Second branch
 elif websitefowarding <= 1:
-	if  serverInput=="different domain": #right tree
+	if  serverInput=="different domain":
 			if (lengthofurl >= 54 and lengthofurl <= 75):	
 						fishing="legitimate"
 			else:
@@ -71,14 +72,15 @@ elif websitefowarding <= 1:
 					
 	else:
 		fishing="phishing"
-else: # second branch	
+# Third branch
+else:
 	if (lengthofurl >= 54 and lengthofurl <= 75):
-		fishing="legitimate" #left branch)
+		fishing="legitimate"
 	else:
 		if age=="-1":
-			fishing="phishing" # left branch
+			fishing="phishing"
 		else:
-			if serversInput=="different domain": #right branch here
+			if serversInput=="different domain":
 				if (websitefowarding>=2 and websitefowarding <4):
 					if ipAdress == "yes":
 						fishing="phishing"
@@ -87,7 +89,7 @@ else: # second branch
 				else:
 					fishing="suspicious"
 			else:
-				if (serverInput == "about blank" or serverInput==" "):	##finish
+				if (serverInput == "about blank" or serverInput==" "):
 					if (lengthofurl >= 54 and lengthofurl <= 75):
 						fishing="suspicious"
 					elif (lengthofurl<54):
@@ -104,4 +106,3 @@ else: # second branch
 
 
 print("\nExpected website is  "+fishing) 
-
