@@ -45,7 +45,7 @@ if ipAdress == "yes":
     ipresult = "phishing"
 else: ipresult = "legitimate"
 
-# our classification output = income level	
+# our classification output = fishing level	
 # Initialize as unknown in case the tree doesnt cover output
 fishing = "unknown"
 	
@@ -53,49 +53,49 @@ if (MS!="other"): # left branch
 	if (ed!="HS" or ed!="no HS"):
 		if MS=="married":
 			if hours=="extra":  # applies to all branches
-				income="greater"
+				fishing="greater"
 			else:
-				if age == "2":
+				if age == "-1":
 					if occ == "2":
-						income="less"
+						fishing="less"
 					else:
-						income="greater"
+						fishing="greater"
 				else:
-					income="less"
+					fishing="less"
 		if MS=="divorced":
 			if hours=="extra": #right tree
 				if (ed=="Masters" or ed=="Prof" or ed=="Doctorate"):
 					if (occ =="1"):	
-						income="greater"
+						fishing="greater"
 					else:
-						income="less"
+						fishing="less"
 				else:
-					income="less"
+					fishing="less"
 	else:
-		income="less"
+		fishing="less"
 else: # right branch	
 	if (ed=="HS" or ed=="no HS"):
-		income="less" #left branch)
+		fishing="less" #left branch)
 	else:
 		if age=="0":
-			income="less" # left branch
+			fishing="less" # left branch
 		else:
 			if hours=="standard":# right branch here
 				if (ed=="Prof" or ed=="Doctorate"):
 					if (gender=="male"):
-						income="greater"
+						fishing="greater"
 					else:
-						income="less"
+						fishing="less"
 				else:
-					income="less"
+					fishing="less"
 			else:
 				if (ed=="Masters" or ed=="Prof" or ed=="Doctorate"):	##finish
 					if (occ=="1"):
-						income=="greater"
+						fishing=="greater"
 					else:
-						income=="less"
+						fishing=="less"
 				else:
-					income="less"
+					fishing="less"
 					
 				
 	
@@ -105,6 +105,6 @@ else: # right branch
 #print(MS)
 #print(ed)
 #print(hours)
-#print(income)
+#print(fishing)
 
 print("\nExpected website is  "+fishing) 
