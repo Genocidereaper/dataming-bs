@@ -61,17 +61,16 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 						fishing="suspious"
 				else:
 					fishing="phishing"
-		if MS=="divorced":
-			if hours=="extra": #right tree
-				if (ed=="Masters" or ed=="Prof" or ed=="Doctorate"):
-					if (occ =="1"):	
-						fishing="greater"
+		if websitefowarding <= 1::
+			if  hoursInput=="different domain": #right tree
+					if (OccInput >= 54 and OccInput <= 75)::	
+						fishing="suspicious"
 					else:
-						fishing="less"
+						fishing="legitimate"
 				else:
 					fishing="phishing"
 	else:
-		fishing="less"
+		fishing="legitimate"
 else: # second branch	
 	if (ed=="HS" or ed=="no HS"):
 		fishing="less" #left branch)
