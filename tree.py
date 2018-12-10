@@ -1,7 +1,7 @@
 # Decision Tree Program - phishing Data
 
-ageInput=int(input("Please enter age in months:  "))
-if ageInput>=6:
+ageofdomainInput=int(input("Please enter age in months:  "))
+if ageofdomainInput>=6:
 	age="1"
 else:
 	age="-1"
@@ -22,10 +22,10 @@ else:
 	popupwindow="legitimate"
 
 # server form handling
-hoursInput=input("server form handling")
-if hoursInput == "about blank" or hoursInput==" ":
+serverInput=input("server form handling")
+if serverInput == "about blank" or serverInput==" ":
 	hours="Phishing"
-elif hoursInput=="different domain":
+elif serverInput=="different domain":
 	hours="Suspicious"
 else:
     hours = "legitimate"
@@ -51,7 +51,7 @@ fishing = "unknown"
 	
 if (websitefowarding>=2 and websitefowarding <4): # first branch
 	if (popupwindow != " "):
-			if hoursInput == "about blank" or hoursInput==" ":  # applies to all branches
+			if serverInput == "about blank" or serverInput==" ":  # applies to all branches
 				fishing="phishing"
 			else:
 				if age == "1":
@@ -62,23 +62,23 @@ if (websitefowarding>=2 and websitefowarding <4): # first branch
 				else:
 					fishing="phishing"
 elif websitefowarding <= 1:
-	if  hoursInput=="different domain": #right tree
-			if (OccInput >= 54 and OccInput <= 75):	
-						fishing="suspicious"
+	if  serverInput=="different domain": #right tree
+			if (lengthofurl >= 54 and lengthofurl <= 75):	
+						fishing="legitimate"
 			else:
-			    fishing="legitimate"
+			    fishing="phishing"
 				
 					
 	else:
 		fishing="phishing"
 else: # second branch	
-	if (OccInput >= 54 and OccInput <= 75):
-		fishing="suspicious" #left branch)
+	if (lengthofurl >= 54 and lengthofurl <= 75):
+		fishing="legitimate" #left branch)
 	else:
 		if age=="-1":
 			fishing="phishing" # left branch
 		else:
-			if hoursInput=="different domain": #right branch here
+			if serversInput=="different domain": #right branch here
 				if (websitefowarding>=2 and websitefowarding <4):
 					if ipAdress == "yes":
 						fishing="phishing"
@@ -87,10 +87,10 @@ else: # second branch
 				else:
 					fishing="suspicious"
 			else:
-				if (hoursInput == "about blank" or hoursInput==" "):	##finish
-					if (OccInput >= 54 and OccInput <= 75):
+				if (serverInput == "about blank" or serverInput==" "):	##finish
+					if (lengthofurl >= 54 and lengthofurl <= 75):
 						fishing="suspicious"
-					elif (OccInput<54):
+					elif (lengthofurl<54):
 						fishing="legitimate"
 					else:
 						fishing="phishing"
@@ -104,3 +104,4 @@ else: # second branch
 
 
 print("\nExpected website is  "+fishing) 
+
