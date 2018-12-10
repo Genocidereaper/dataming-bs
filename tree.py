@@ -9,17 +9,17 @@ else:
 # website fowarding
 websitefowarding = int(input("Enter website fowarding "))
 if websitefowarding>=2 and websitefowarding <4:
-    websitefowarding= "suspicious"
+	websitefowarding= "suspicious"
 elif websitefowarding <= 1:
-    websitefowarding = "legitimate"
+	websitefowarding = "legitimate"
 else: websitefowarding = "phishing"
 
 #pop up window
 popwindow= input("Enter info about pop up window")
 if popupwindow != " ":
-    popupwindow ="phishing"
+	popupwindow ="phishing"
 else:
-    popupwindow="legitimate"
+	popupwindow="legitimate"
 
 # server form handling
 hoursInput=input("server form handling")
