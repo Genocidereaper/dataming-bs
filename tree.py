@@ -15,7 +15,7 @@ elif websitefowarding <= 1:
 else: websitefowarding = "phishing"
 
 #pop up window
-popwindow= input("Enter info about pop up window")
+popupwindow= input("Enter info about pop up window")
 if popupwindow != " ":
 	popupwindow ="phishing"
 else:
