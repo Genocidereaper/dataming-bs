@@ -1,7 +1,4 @@
-# Decision Tree Program - Census Data
-
-#Age:  
-#0-29: 1            30+: 2
+# Decision Tree Program - phishing Data
 
 ageInput=int(input("Please enter age in months:  "))
 if ageInput>=6:
@@ -42,13 +39,15 @@ elif (OccInput<54):
 else:
 	urlstatus="phishing"
 	
-# Gender: M F
-gender = input("enter gender: ")
-	
+# having ip Address
+ipAdress = input("enter if it has an ip Address: yes or no only ")
+if ipAdress == "yes":
+    ipresult = "phishing"
+else: ipresult = "legitimate"
 
 # our classification output = income level	
 # Initialize as unknown in case the tree doesnt cover output
-income = "unknown"
+fishing = "unknown"
 	
 if (MS!="other"): # left branch
 	if (ed!="HS" or ed!="no HS"):
